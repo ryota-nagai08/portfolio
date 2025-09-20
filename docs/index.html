@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ポートフォリオ</title>
+    <title>永井良太 / ポートフォリオ</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
     <meta name="description" content="就活用ポートフォリオ。Java / Spring Boot / PostgreSQL を中心に学習し、Webアプリ開発からデータ活用へ挑戦しています。">
 </head>
 
@@ -20,8 +21,8 @@
             <h3>自己紹介</h3>
             <p>
                 未経験からプログラミングを学習し、研修を通じてWebアプリ開発を経験しました。<br>
-                Java / Spring Boot を用いたバックエンド実装、PostgreSQLを用いたデータ管理、<br>
-                GitHubでのソースコード管理を行っています。
+                Java / Spring Boot を用いたバックエンド実装、HTML / CSS / JavaScriptによるフロントエンド実装、<br>
+                PostgreSQLを用いたデータ管理。GitHubでのソースコード管理を行っています。
             </p>
         </div>
     </section>
@@ -95,7 +96,7 @@
                 <p>
                     研修課題として開発したWebアプリケーションです。<br>
                     カレンダーからのスケジュール登録や管理者側からのお知らせ登録、チャット機能などを実装しました。<br>
-                    また、チャット機能は各掲示板ごとにメッセージ送信を行う形で設計しました。
+                    また、チャット機能は各掲示板ごとでメッセージ送信を行う形で設計しました。
                 </p>
                 <ul class="work-points">
                     <li>SpringSecurityによるログイン認証</li>
@@ -111,16 +112,68 @@
                 <!-- 画像ギャラリー -->
                 <div class="gallery">
                     <figure>
-                        <img src="images/login.png" alt="ログイン画面">
+                        <img class="gallery-image" src="images/user-register.png" alt="新規ユーザー登録">
+                        <figcaption>新規ユーザー登録</figcaption>
+                    </figure>
+                    <figure>
+                        <img class="gallery-image" src="images/login.png" alt="ログイン画面">
                         <figcaption>ログイン</figcaption>
                     </figure>
                     <figure>
-                        <img src="images/dashboard.png" alt="管理者ダッシュボード">
-                        <figcaption>管理者ダッシュボード</figcaption>
+                        <img class="gallery-image" src="images/home.png" alt="ホーム画面">
+                        <figcaption>ホーム画面</figcaption>
                     </figure>
                     <figure>
-                        <img src="images/feature.png" alt="お気に入り機能">
-                        <figcaption>お気に入り機能</figcaption>
+                        <img class="gallery-image" src="images/my-page.png" alt="マイページ">
+                        <figcaption>マイページ</figcaption>
+                    </figure>
+                    <figure>
+                        <img class="gallery-image" src="images/my-event-list.png" alt="参加イベント一覧">
+                        <figcaption>参加イベント一覧</figcaption>
+                    </figure>
+                    <figure>
+                        <img class="gallery-image" src="images/change-pass.png" alt="パスワード変更">
+                        <figcaption>パスワード変更</figcaption>
+                    </figure>
+                    <figure>
+                        <img class="gallery-image" src="images/logout.png" alt="ログアウト">
+                        <figcaption>ログアウト</figcaption>
+                    </figure>
+                    <figure>
+                        <img class="gallery-image" src="images/chat.png" alt="メッセージ送信">
+                        <figcaption>メッセージ・画像送信</figcaption>
+                    </figure>
+                    <figure>
+                        <img class="gallery-image" src="images/news-list.png" alt="お知らせ一覧">
+                        <figcaption>お知らせ一覧</figcaption>
+                    </figure>
+                    <figure>
+                        <img class="gallery-image" src="images/news-detail.png" alt="お知らせ詳細">
+                        <figcaption>お知らせ詳細</figcaption>
+                    </figure>
+                    <figure>
+                        <img class="gallery-image" src="images/event-list.png" alt="イベント一覧">
+                        <figcaption>イベント一覧</figcaption>
+                    </figure>
+                    <figure>
+                        <img class="gallery-image" src="images/event-detail.png" alt="イベント詳細">
+                        <figcaption>イベント一詳細</figcaption>
+                    </figure>
+                    <figure>
+                        <img class="gallery-image" src="images/event-register.png" alt="イベント登録カレンダー">
+                        <figcaption>イベント登録カレンダー</figcaption>
+                    </figure>
+                    <figure>
+                        <img class="gallery-image" src="images/admin-login.png" alt="管理者ログイン">
+                        <figcaption>管理者ログイン</figcaption>
+                    </figure>
+                    <figure>
+                        <img class="gallery-image" src="images/admin-check-userlist.png" alt="管理者用ユーザーリスト">
+                        <figcaption>管理者用ユーザーリスト</figcaption>
+                    </figure>
+                    <figure>
+                        <img class="gallery-image" src="images/admin-news-register.png" alt="管理者用お知らせ登録">
+                        <figcaption>管理者用お知らせ登録</figcaption>
                     </figure>
                 </div>
             </article>
@@ -141,6 +194,12 @@
     <footer>
         <p>&copy; 2025 Ryota Nagai — Last update:<time datetime="2025-09-19">2025-09-19</time></p>
     </footer>
+
+    <div id="lightbox" class="lightbox">
+        <span class="close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+        <div id="caption"></div>
+    </div>
 </body>
 
 </html>
